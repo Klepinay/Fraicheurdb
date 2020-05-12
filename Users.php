@@ -23,7 +23,7 @@
 				<button value="Ajouter un utilisateur" id="ajout" style="margin-top: 25px; margin-left: 200px" >+ Ajouter un Utilisateur</button><br /><br />
 				<div id="form">
 				<h1>Ajouter un Utilisateur</h1>
-					<form method="post" action="Ajout.php">
+					<form method="post" action="Ajoutuser.php">
 						<p><label for="user">Nom de l'utilisateur : </label> <input type="text" name="user" id="user"> </p>
 						<p><label for="identifiant">Identifiant : </label> <input type="text" name="identifiant" id="identifiant"></p>
 						<p><label for="password">Mot de Passe : </label> <input type="text" style="width: 200px;" name="password" id="password"></p>
@@ -50,11 +50,16 @@
 		?>
 				<tr align="center">
 					<td>
-						<?php echo $user["usr"]
+						<?php echo $user["usr_name"] ?>
 					</td>
-					<td></td>
-					<td></td>
+					<td>
+						<?php echo $user["usr_identifiant"] ?>
+					</td>
+					<td>
+						<?php echo $user["usr_role"] ?>
+					</td>
 				</tr>
+		<?php endforeach ?>
 				
 			</table>
 			
