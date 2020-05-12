@@ -22,7 +22,7 @@
 				<button value="Ajouter un Fournisseur" id="ajout" style="margin-top: 25px; margin-left: 200px" >+ Ajouter un Fournisseur</button><br /><br />
 				<div id="form">
 				<h1>Ajouter un Fournisseur</h1>
-					<form method="post" action="Ajoutfour.php">
+					<form method="post" action="Ajoutfournisseur.php">
 						<p><label for="name">Nom du Fournisseur : </label> <input type="text" name="name" id="name"> </p>
 						<p><label for="code">Code Fournisseur : </label> <input type="text" name="code" id="code"> </p> 
 						<p><input type="submit" value="Ajouter" /></p>
