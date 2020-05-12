@@ -19,7 +19,6 @@
 		</nav>
 	</div>
 	
-			<div id="container">
 				<button value="Ajouter un utilisateur" id="ajout" style="margin-top: 25px; margin-left: 200px" >+ Ajouter un Utilisateur</button><br /><br />
 				<div id="form">
 				<h1>Ajouter un Utilisateur</h1>
@@ -36,7 +35,7 @@
 							</select>
 						</p>
 						<p><input type="submit" value="Ajouter"></p>
-			</div>
+				</div>
 			
 			<table width="50%" border="1" style="border-collapse:collapse" align="center">
 				<tr align="center">
@@ -64,6 +63,9 @@
 					</td>
 					<td>
 						<?php echo $user["usr_role"] ?>
+					</td>
+					<td>
+						<a href="deleteuser.php?id=<?php echo $user['usr_id']; ?>"  title="Supprimer">X</a>
 					</td>
 				</tr>
 		<?php endforeach ?>

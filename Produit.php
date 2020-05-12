@@ -62,7 +62,7 @@
 						<?php echo $article['prd_title']; ?>
 					</td>								
 					<td>
-					<a href="modifarticle.php?id=<?php echo $article['prd_id'] ?>"><button value="modifier" id="modifier" alt='Modifier'>Modifier</button>
+						<a href="modifarticle.php?id=<?php echo $article['prd_id'] ?>"><button value="modifier" id="modifier" alt='Modifier'>Modifier</button>
 						<a href="delete.php?id=<?php echo $article['prd_id']; ?>"  title="Supprimer"><button value="Supprimer" id="delete" alt='Supprimer'>X</button></a>
 					</td>
 				</tr>
