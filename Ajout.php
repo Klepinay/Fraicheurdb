@@ -24,7 +24,7 @@
         $sth->execute();
 		
 		// On retourne l'utilisateur vers la page 
-		header('Location:index.php');
+		header('Location:Produit.php');
 		exit;
 	}
 	    catch(PDOException $e){
