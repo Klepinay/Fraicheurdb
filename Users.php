@@ -27,7 +27,14 @@
 						<p><label for="user">Nom de l'utilisateur : </label> <input type="text" name="user" id="user"> </p>
 						<p><label for="identifiant">Identifiant : </label> <input type="text" name="identifiant" id="identifiant"></p>
 						<p><label for="password">Mot de Passe : </label> <input type="text" style="width: 200px;" name="password" id="password"></p>
-						<p><label for="role">Role</label> <input type="text" name="role" id="role"> </p>
+						<p><label for="role">Role</label> 
+							<select type="select" name="role" id="role">
+								<option>Admin</option>
+								<option>Préparateur</option>
+								<option>Magasin</option>
+								<option>Réceptionniste</option>
+							</select>
+						</p>
 						<p><input type="submit" value="Ajouter"></p>
 			</div>
 			
