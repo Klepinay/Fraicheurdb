@@ -61,6 +61,7 @@
 					</td>
 					<td>
 						<a href="Modiffournisseur.php?id=<?php echo $fournisseur['frn_id'] ?>" title="modiffournisseur"><button Value="Modifier" id="updatefournisseur">Modifer</button></a> 
+						<a href="deletefournisseur.php?id=<?php echo $fournisseur['frn_id'] ?>" title="Supprimer"><button Value="supprimer" id="supprimerfournisseur">X</button></a>
 					</td>
 				</tr>
 		<?php endforeach ?>
