@@ -5,8 +5,8 @@
 	$pass = "";
 	
 	$quantite = $_POST["quantite"];
-	$produit = $_POST["produit"];
-	$code = $_POST["code_article"];
+	$produit = $_POST["libelle"];
+	$code = $_POST["Codearticle"];
 	$id = $_GET["id"];
 	try{
         //On se connecte à la BDD

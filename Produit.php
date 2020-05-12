@@ -62,17 +62,7 @@
 						<?php echo $article['prd_title']; ?>
 					</td>								
 					<td>
-					<button value="modifier" id="modifier" alt='Modifier'>Modifier</button>
-						<div id="formodif" style="display:none">
-							<h1>Modifier un Article</h1>
-							<form method="post" action="updatearticle.php?id=<?php echo $article['prd_id'] ?>">
-								<p><label for="produit">Nom du produit : </label> <input type="text" name="produit" id="produit" value="<?php echo $article['prd_title']?>"> </p>
-								<p><label for="quantite">Quantité : </label> <input type="Number" style="width: 200px;" name="quantite" value="<?php echo $article['prd_content']?>"> Kg</p>
-								<p><label for="code_article">Code Article</label> <input type="text" name="code_article" id="code_article" value="<?php echo $article['Code']?>"> </p>
-								<p><input type="submit" value="Modifier"></p>
-							</form>
-
-						</div>
+					<a href="modifarticle.php?id=<?php echo $article['prd_id'] ?>"><button value="modifier" id="modifier" alt='Modifier'>Modifier</button>
 						<a href="delete.php?id=<?php echo $article['prd_id']; ?>"  title="Supprimer"><button value="Supprimer" id="delete" alt='Supprimer'>X</button></a>
 					</td>
 				</tr>
