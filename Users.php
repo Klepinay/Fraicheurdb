@@ -34,7 +34,8 @@
 								<option>Réceptionniste</option>
 							</select>
 						</p>
-						<p><input type="submit" value="Ajouter"></p>
+						<p><input type="submit" value="Ajouter" /></p>
+					</form>
 				</div>
 			
 			<table width="50%" border="1" style="border-collapse:collapse" align="center">
@@ -56,16 +57,17 @@
 		?>
 				<tr align="center">
 					<td>
-						<?php echo $user["usr_name"] ?>
+						<?php echo $user['usr_name'] ?>
 					</td>
 					<td>
-						<?php echo $user["usr_identifiant"] ?>
+						<?php echo $user['usr_identifiant'] ?>
 					</td>
 					<td>
-						<?php echo $user["usr_role"] ?>
+						<?php echo $user['usr_role'] ?>
 					</td>
 					<td>
-						<a href="deleteuser.php?id=<?php echo $user['usr_id']; ?>"  title="Supprimer">X</a>
+						<a href="Modifuser.php?id=<?php echo $user['usr_id'] ?>" title="modifuser"><button Value="Modifier" id="updateuser">Modifier</button></a>
+						<a href="deleteuser.php?id=<?php echo $user['usr_id']; ?>"  title="Supprimer"><button value="Supprimer" id="deleteuser">X</button></a>
 					</td>
 				</tr>
 		<?php endforeach ?>
