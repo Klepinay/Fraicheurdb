@@ -59,7 +59,9 @@
 					<td>
 						<?php echo $fournisseur['frn_code'] ?>
 					</td>
-					<td></td>
+					<td>
+						<a href="Modiffournisseur.php?id=<?php echo $fournisseur['frn_id'] ?>" title="modiffournisseur"><button Value="Modifier" id="updatefournisseur">Modifer</button></a> 
+					</td>
 				</tr>
 		<?php endforeach ?>
 				
