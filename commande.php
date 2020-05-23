@@ -38,7 +38,7 @@
 		</td>
 		<td align="center">
 			<select name="unite_PT" id="unite_PT">
-				<option>KG</option>
+				<option>COUCOU</option>
 				<option>Tonnes</option>
 				<option>Cageot</option>
 				<option>Unité</option>
