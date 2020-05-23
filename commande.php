@@ -1,52 +1,77 @@
-
+<?php
+ $magasin = $_GET['magasin'];
+?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Document sans titre</title>
 </head>
-
+<form id="form1" name="form1" method="post" action="Bondecom.php?magasin=<?php echo $magasin ?>">
 <body><table width="100%" border="0">
   <tbody width="100%">
     <tr>
-      <th scope="col">Produits</th>
-      <th scope="col">Quantite</th>
+      <th scope="col">COMMANDE</th>
+      <th scope="col">
+		<label for="date">DATE</label>
+		<input type="date" id="date" name="date">
+	  </th>
+      <th scope="col">MAGASINS<br />
+		<?php $name = $_GET['magasin'];
+			echo $name;
+		?>
+	  </th>
 	</tr>
-	
-	
-    <tr>
-		<td align="center">
-			<div id="NouveauProd">
-				<div class="copycat">
-				<form id="form1" name="form1" method="post">				
-				  <select name="select" id="select">
-					<?php 
-						$bdd = new PDO('mysql:host=localhost;dbname=fraicheurdb;charset=utf8', 'root', '');
-						$articles = $bdd->query('select * from t_produit order by prd_id');
-						foreach ($articles as $article): 
-					?>
-					<option><?php echo $article['prd_title'] ?></option>
-						<?php endforeach ?>
-				  </select><br /><br />					
-		</td>
-		<td align="center">
-			<input type="number" id="quantite" name="quantite">
-		</td>
-		</tr>
-		<tr>
-			<td colspan=2 align="center">
-				<input type="button" onclick="copycat()" id="button1" value="Nouveau produit">
-			</td>
-		</tr>
-		<tr>
-			<td colspan=2 align="center">
-					
-			</td>
-		</tr>
-				</form>
-				</div>
-			</div>
   </tbody>
+</table>
+
+<table border="1" width="100%">
+	<tr>
+		<td align="center">	
+			1
+		</td>
+		<td align="center">	
+			<input type="text" name="petitetomate" id="petitetomate" value="Petite-tomate">
+		</td>
+		<td align="center">
+			<input type="number" name="PT_quantite" id="PT_quantite" style="width:50px">
+		</td>
+		<td align="center">
+			<select name="unite_PT" id="unite_PT">
+				<option>KG</option>
+				<option>Tonnes</option>
+				<option>Cageot</option>
+				<option>Unité</option>
+			</select>
+		</td>
+		<td align="center">
+			50
+		</td>
+		<td> 
+			<input type="text" name="mang_americ" value="Mang-americ">
+		</td>
+		<td align="center">	
+			<input type="number" name="Mameric_quantite" id="Mameric_quantite" style="width:50px">
+		</td>
+		<td align="center">	
+			<select name="unite_Mameric_k" id="unitePT_Mameric_k">
+				<option>KG</option>
+				<option>Tonnes</option>
+				<option>Cageot</option>
+				<option>Unité</option>
+			</select>
+		</td>
+	</tr>
+			
+				  
+				 
+	<tr>
+		<td colspan=8 align="center">
+			<input type="submit" id="submit" name="submit" value="Commander">
+
+		</td>
+	</tr>
+	</form>
 </table>
 
 </body>

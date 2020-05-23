@@ -17,14 +17,14 @@ if(isset($_POST['username']) && isset($_POST['password']))
     
     if($username !== "" && $password !== "")
     {
-        $requete1 = "SELECT count(*) FROM t_user where usr_identifiant = '".$username."' and usr_password = '".$password."' and usr_role = 'Admin'";
+        $requete1 = "SELECT count(*) FROM t_user where usr_identifiant = '".$username."' and usr_password = '".$password."' and usr_role = 'Préparateur'";
         $exec_requete = mysqli_query($db,$requete1);
         $reponse      = mysqli_fetch_array($exec_requete);
         $count = $reponse['count(*)'];
 		if($count !=0)
         {
 			$_SESSION['username'] = $username;
-			header('Location: back_office.php');           
+			header('Location: depot.php?'.$username);           
         }
 		else
         {

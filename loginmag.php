@@ -11,7 +11,7 @@
 		<div id="container">
 		
 			<!-- Zone de connexion -->
-			<form action="verification.php" method="POST">
+			<form action="verificationmag.php" method="POST">
 				<h1>Connexion</h1>
 				
 				<label><b>Nom d'utilisateur</b></label>
