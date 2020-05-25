@@ -6,6 +6,7 @@
 <head>
 <meta charset="utf-8">
 <title>Document sans titre</title>
+<link href="commande.css" rel="stylesheet">
 </head>
 <form id="form1" name="form1" method="post" action="Bondecom.php?magasin=<?php echo $magasin ?>">
 <body><table width="100%" border="0">
