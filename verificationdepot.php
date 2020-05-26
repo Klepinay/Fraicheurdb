@@ -17,7 +17,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
     
     if($username !== "" && $password !== "")
     {
-        $requete1 = "SELECT count(*) FROM t_user where usr_identifiant = '".$username."' and usr_password = '".$password."' and usr_role = 'Préparateur'";
+        $requete1 = "SELECT count(*) FROM t_user where usr_identifiant = '".$username."' and usr_password = '".$password."' and usr_role = 'Preparateur'";
         $exec_requete = mysqli_query($db,$requete1);
         $reponse      = mysqli_fetch_array($exec_requete);
         $count = $reponse['count(*)'];
@@ -28,17 +28,17 @@ if(isset($_POST['username']) && isset($_POST['password']))
         }
 		else
         {
-           header('Location: login.php?erreur=1'); // utilisateur ou mot de passe incorrect
+           header('Location: logindepot.php?erreur=1'); // utilisateur ou mot de passe incorrect
         }
     }
     else
     {
-       header('Location: login.php?erreur=2'); // utilisateur ou mot de passe vide
+       header('Location: logindepot.php?erreur=2'); // utilisateur ou mot de passe vide
     }
 }
 else
 {
-   header('Location: login.php');
+   header('Location: logindepot.php');
 }
 mysqli_close($db); // fermer la connexion
 ?>
