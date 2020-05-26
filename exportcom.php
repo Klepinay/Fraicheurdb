@@ -8,5 +8,12 @@
 			$fp = fopen("exportcom.csv",'a+');
 			fputcsv($fp,$lign,',');
 			fclose($fp);
+			
 		}
+		echo ('Export reussis ! <br />');
+		echo ('<a href="depot.php"><button>Retour au commande</button></a>');
+		exit;
+		
+		
+		
 ?>

@@ -18,7 +18,7 @@
 		</nav>
 	</div>
 <form method="POST" action="commande-seach.php">
-<table border="1" with="50%" align="center" >
+<table border="0" with="50%" align="center" style="margin-top:50px; margin-bottom:50px">
 	<tr>
 		<td width="50%">
 			<select name="magasin" id="magasin" >
@@ -40,12 +40,28 @@
 			<input type="submit" value="Voir la commande">
 		</td>
 	</tr>
+
 	</table>
 </form>
-<table width="100%" border="1">
+<table width="100%" border="0">
 <tr>
 	<td align="center" width="30%">
-		<table border="1" width="80%">
+		<table border="0" width="100%" style="border-collapse: collapse">
+		<tr>
+			<th><h2>Magasin : <?php echo $_GET['magasin'] ?></h2></th>
+			<th><h2>Date : <?php echo $_GET['date'] ?></h2></th>
+		</tr>
+		<tr style="border: solid 2px white;">
+			<th>
+				<p>Produit</p>
+			</th >
+			<th >
+				<p>Quantité</p>
+			</th>
+			<th >
+				<p>Unité</p>
+			</th>
+		</tr>
 			<?php 
 			$magasin = $_GET['magasin'];
 			$date = $_GET['date'];
@@ -55,25 +71,25 @@
 				WHERE com_mag='$magasin' and com_date='$date'");
 				foreach ($articles as $article): 
 			?>
-		<tr align="center">
-			<td>
-				<?php echo $article['com_article'] ?>
+		<tr align="center" style="border: solid 2px white;">
+			<td >
+				<p><b><?php echo $article['com_article'] ?></b></p>
 			</td>
-			<td>
-				<?php echo $article['com_quantite'] ?>
+			<td >
+				<p><b><?php echo $article['com_quantite'] ?></b></p>
 			</td>
-			<td>
-				<?php echo $article['com_unite'] ?>
+			<td >
+				<p><b><?php echo $article['com_unite'] ?></b></p>
 			</td>
 		</tr>
 			<?php endforeach ?>
 		</table>
 	</td>
-	<td align="center">
-		<table width="100%" border="1" >
+	<td align="center" valign="top">
+		<table width="100%" border="0" >
 		<tr>
 			<th>
-				Produit
+				<h1>Préparation de la commande</h1>
 			</th>
 		</tr>
 		<tr>
@@ -103,11 +119,11 @@
 						</div>
 
 
-    <div id="ajoutSupprimerArticle">
-       <a href="javascript:;" title="Ajouter un article" class="ajoutArticle" rel="article">Cloner</a>
-       <a href="javascript:;" title="Supprimer un article" class="supprimerArticle" rel="article">Décloner</a>
+    <div id="ajoutSupprimerArticle" style="margin-bottom:10px">
+       <a href="javascript:;" title="Ajouter un article" class="ajoutArticle" rel="article"><input type="button" id="nouveau" name="nouveau" value="+ Ajouter Produit"></a>
+       <a href="javascript:;" title="Supprimer un article" class="supprimerArticle" rel="article" ><input type="button" id="nouveau" value="Supprimer le dernier produit"></a>
     </div>
-		<input value="Enregistrer" type="submit">
+		<input value="Enregistrer" type="submit" form="article">
 	</td>
 </tr>
 	
