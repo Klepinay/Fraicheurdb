@@ -10,6 +10,7 @@
 <body>
 
 	<div id="nav" align="center">
+	<image src="\order_fdb2.0\images\logo Fraicheur de Bourbon.png" >
 		<nav>
 			<ul>
 				<li class="active"><a href="Produit.php">Produits</a></li><!--
@@ -17,7 +18,25 @@
 				--><li><a href="Fournisseur.php">Fournisseur</a></li>
 			</ul>
 		</nav>
+		<a href='\order_fdb2.0\Login\verif\verificationmag.php?deconnexion=true'><input type="button" name="déconnexion" id="déconnection" Value="Déconnexion" style="margin-bottom:25px;"></a>
+            
+            <!-- tester si l'utilisateur est connecté -->
+            <?php
+                session_start();
+                if(isset($_GET['deconnexion']))
+                { 
+                   if($_GET['deconnexion']==true)
+                   {  
+                      session_unset();
+                      header("location:index.php");
+                   }
+                }
+                else if($_SESSION['username'] !== ""){
+                    $user = $_SESSION['username'];
+                }
+            ?>
 	</div>
+	
 	
 
 		<div id="container">
@@ -41,12 +60,11 @@
 				</form>	
 			</div>
 
-			<table width="50%" border="1" style="border-collapse:collapse" align="center">
+			<table width="50%" border="1" style="border-collapse:collapse; background: #DFDFDF " align="center">
 				<tr align="center">
-					<td width="80%">
-						<p>Article</p>
-					</td>
-					<td></td>
+					<th width="80%" style="background: grey" colspan=2>
+						<h1>Article</h1>
+					</th>
 				</tr>
 
 		<?php 
@@ -55,13 +73,13 @@
 			foreach ($articles as $article): 
 		?>
 
-				<tr align="center">
+				<tr>
 
 					<td>					
 						<?php echo $article['prd_title']; ?>
 					</td>								
-					<td>
-						<a href="update/modifarticle.php?id=<?php echo $article['prd_id'] ?>"><button value="modifier" id="modifier" alt='Modifier'>Modifier</button>
+					<td align="center">
+						<a href="update/modifarticle.php?id=<?php echo $article['prd_id'] ?>"><button value="modifier" id="modifier" alt='Modifier'>Modifier</button></a>
 						<a href="delete/delete.php?id=<?php echo $article['prd_id']; ?>"  title="Supprimer"><button value="Supprimer" id="delete" alt='Supprimer'>X</button></a>
 					</td>
 				</tr>

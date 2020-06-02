@@ -9,7 +9,8 @@
 </head>
 <body>
 
-	<div id="nav" align="center">
+	<div id="nav" align="center">	
+	<image src="\order_fdb2.0\images\logo Fraicheur de Bourbon.png" >
 		<nav>
 			<ul>
 				<li><a href="Produit.php">Produits</a></li><!--
@@ -17,6 +18,23 @@
 				--><li><a href="Fournisseur.php">Fournisseur</a></li>
 			</ul>
 		</nav>
+		<a href='\order_fdb2.0\Login\verif\verificationmag.php?deconnexion=true'><input type="button" name="déconnexion" id="déconnection" Value="Déconnexion" style="margin-bottom:25px;"></a>
+            
+            <!-- tester si l'utilisateur est connecté -->
+            <?php
+                session_start();
+                if(isset($_GET['deconnexion']))
+                { 
+                   if($_GET['deconnexion']==true)
+                   {  
+                      session_unset();
+                      header("location:index.php");
+                   }
+                }
+                else if($_SESSION['username'] !== ""){
+                    $user = $_SESSION['username'];
+                }
+            ?>
 	</div>
 	
 				<button value="Ajouter un utilisateur" id="ajout" style="margin-top: 25px; margin-left: 200px" >+ Ajouter un Utilisateur</button><br /><br />
@@ -38,8 +56,8 @@
 					</form>
 				</div>
 			
-			<table width="50%" border="1" style="border-collapse:collapse" align="center">
-				<tr align="center">
+			<table width="50%" border="1" style="border-collapse:collapse; background: #DFDFDF" align="center">
+				<tr align="center" style="background: grey">
 					<td>
 						<p>Nom de L'utilisateur</p>
 					</td>
@@ -49,13 +67,15 @@
 					<td>
 						<p>Role</p>
 					</td>
+					<td>
+					</td>
 				</tr>
 		<?php 
 			$bdd = new PDO('mysql:host=localhost;dbname=fraicheurdb;charset=utf8', 'root', '');
 			$users = $bdd->query('select * from t_user order by usr_id');
 			foreach ($users as $user): 
 		?>
-				<tr align="center">
+				<tr >
 					<td>
 						<?php echo $user['usr_name'] ?>
 					</td>

@@ -114,9 +114,9 @@
 		</tr>
 		<tr>
 			<td align="center">					
-					<form method="POST" id="article2" name="form" action="exportcom.php?magasin=<?php echo $_GET['magasin'] ?>&date=<?php echo $_GET['date'] ?>">
+					<form method="POST" name="form" action="exportcom.php?magasin=<?php echo $_GET['magasin'] ?>&date=<?php echo $_GET['date'] ?>">
 						<div class="article">
-							<select name="article[]" id="article2" form="article">
+							<select name="produit[]" id="article2">
 								<option value="">--Choisissez un article--</option>
 								
 									<?php 
@@ -130,7 +130,7 @@
 
 							<input type="number" name="quantite[]" id="quantite2" style="width: 50px">
 
-							<select name="unite[]" id="unite2" form="article">
+							<select name="unite[]" id="unite2">
 								<option>Kilos</option>
 								<option>Tonnes</option>
 								<option>Cageot</option>
@@ -143,7 +143,7 @@
        <a href="javascript:;" title="Ajouter un article" class="ajoutArticle" rel="article"><input type="button" id="nouveau" name="nouveau" value="+ Ajouter Produit"></a>
        <a href="javascript:;" title="Supprimer un article" class="supprimerArticle" rel="article" ><input type="button" id="nouveau" value="Supprimer le dernier produit"></a>
     </div>
-		<input value="Enregistrer" type="submit" form="article2">
+		<input value="Enregistrer" type="submit">
 	</td>
 </tr>
 	

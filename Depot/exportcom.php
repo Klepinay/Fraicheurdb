@@ -1,8 +1,8 @@
 <?php
-			$article = ($_POST['article']);
+			$article = ($_POST['produit']);
 			$quantite = ($_POST['quantite']);
 			$unite = ($_POST['unite']);
-			$count = count($_POST['article']);
+			$count = count($_POST['produit']);
 		for($i = 0; $i < $count; $i++) {
 			$lign = array($article[$i],$quantite[$i],$unite[$i],$_GET['date'], $_GET['magasin']);
 			$fp = fopen("exportcom.csv",'a+');
