@@ -1,5 +1,6 @@
 <?php
  $magasin = $_GET['magasin'];
+ $code = $_GET['code'];
 ?>
 <!doctype html>
 <html>
@@ -8,7 +9,7 @@
 <title>Nouvelle commande magasin</title>
 <link href="commande.css" rel="stylesheet">
 </head>
-<form id="form1" name="form1" method="post" action="Bondecom.php?magasin=<?php echo $magasin ?>">
+<form id="form1" name="form1" method="post" action="Bondecom.php?magasin=<?php echo $magasin ?>&code=<?php echo $code ?>">
 <body align="center">
 <image src="\order_fdb2.0\images\logo Fraicheur de Bourbon.png" >
 <table width="70%" border="0" align="center">

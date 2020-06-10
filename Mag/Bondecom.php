@@ -6,6 +6,7 @@
 	
 	$date = $_POST['date'];
 	$magasin = $_GET['magasin'];
+	$code = $_GET['code'];
 	$article = $_POST['petitetomate'];
 	$quantite= $_POST['PT_quantite'];
 	$ua = $_POST['unite_PT'];
@@ -17,10 +18,11 @@
 		
 		//On insère les données reçues
         $sth = $dbco->prepare("
-            INSERT INTO t_commande(com_date, com_mag, com_article, com_quantite, com_unite)
-            VALUES(:date, :magasin, :article, :quantite, :unite)");
+            INSERT INTO t_commande(com_date, com_mag, com_mag_id, com_article, com_quantite, com_unite)
+            VALUES(:date, :magasin, :com_mag_id, :article, :quantite, :unite)");
         $sth->bindParam(':date',$date);
         $sth->bindParam(':magasin',$magasin);
+        $sth->bindParam(':com_mag_id',$code);
         $sth->bindParam(':article',$article);
         $sth->bindParam(':quantite',$quantite);
         $sth->bindParam(':unite',$ua);
@@ -744,7 +746,7 @@
 		
 		// On retourne l'utilisateur vers la page 
 		echo "<p align='center'>Commande Validée</p> <br />";
-		echo '<a href="commande.php?magasin='.$magasin.'" ><button >Retour à la page Commande</button></a>';
+		echo '<a href="commande.php?magasin='.$magasin.'&code='.$code.'" ><button >Retour à la page Commande</button></a>';
 		exit;
 	}
 	    catch(PDOException $e){

@@ -114,7 +114,7 @@
 		</tr>
 		<tr>
 			<td align="center">					
-					<form method="POST" name="form" action="exportcom.php?magasin=<?php echo $_GET['magasin'] ?>&date=<?php echo $_GET['date'] ?>">
+					<form method="POST" name="form" action="exportcom.php?magasin=<?php echo $_GET['magasin'] ?>&date=<?php echo $_GET['date'] ?>&code=<?php echo $_GET['code'] ?>">
 						<div class="article">
 							<select name="produit[]" id="article2">
 								<option value="">--Choisissez un article--</option>

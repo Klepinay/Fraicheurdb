@@ -14,6 +14,15 @@ if(isset($_POST['username']) && isset($_POST['password']))
     // pour éliminer toute attaque de type injection SQL et XSS
     $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username'])); 
     $password = mysqli_real_escape_string($db,htmlspecialchars($_POST['password']));
+	
+
+	$bdd = new PDO('mysql:host=localhost;dbname=fraicheurdb;charset=utf8', 'root', '');
+	$codes = $bdd->query("SELECT * FROM `t_user` WHERE usr_identifiant= '".$username."'");
+	foreach ($codes as $code):
+	
+	$code = $code['usr_code'];
+
+	endforeach;
     
     if($username !== "" && $password !== "")
     {
@@ -24,7 +33,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
 		if($count !=0)
         {
 			$_SESSION['username'] = $username;
-			header('Location: \order_fdb2.0\Mag\commande.php?magasin='.$username);           
+			header('Location: \order_fdb2.0\Mag\commande.php?magasin='.$username.'&code='.$code);           
         }
 		else
         {
